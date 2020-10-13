@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+     <item
+            android:id="@+id/nav_Inicio"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Inicio" />
+     <item
+        android:id="@+id/nav_formu"
+        android:icon="@drawable/ic_assignment"
+        android:title="Ingreso Planilla" />
+        <item
+            android:id="@+id/nav_formu_mod"
+            android:icon="@drawable/ic_edit"
+            android:title="Modificar Planilla" />
+        <item
+            android:id="@+id/nav_formu_foto"
+            android:icon="@drawable/ic_insert_photo"
+            android:title="Registros Fotograficos" />
+    <item
+        android:id="@+id/nav_Acerca"
+        android:icon="@drawable/ic_info_outline_black_24dp"
+        android:title="Acerca de CDH_APP" />
+
+</group>
+
+
+</menu>
