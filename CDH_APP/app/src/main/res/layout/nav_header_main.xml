@@ -27,10 +27,6 @@
         android:text="@string/tuxcohol"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hoy_se_bebe_si_dios_lo_pelmite" />
+
 
 </LinearLayout>
