@@ -12,6 +12,7 @@ import android.location.LocationProvider;
 import android.provider.Settings;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -24,6 +25,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.tuxcohol.cdh_app.Fragments.Form1Fragment;
+import com.tuxcohol.cdh_app.Fragments.Form2Fragment;
+import com.tuxcohol.cdh_app.Fragments.Form3Fragment;
 import com.tuxcohol.cdh_app.Vistas.Acerca;
 import com.tuxcohol.cdh_app.Vistas.Formulario;
 
@@ -53,9 +57,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
     }
-
-
-
+    
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -93,18 +95,31 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         Intent i1 = null;
 
+        Fragment miFragment=null;
+        boolean fragmentSeleccionado=false;
+
         int id = item.getItemId();
 
         if (id == R.id.nav_Inicio) {
             i1 = new Intent(this, MainActivity.class);
-
+        } else if (id == R.id.nav_formu) {
+            miFragment=new Form1Fragment();
+            fragmentSeleccionado=true;
+        } else if (id == R.id.nav_formu_mod) {
+            miFragment=new Form2Fragment();
+            fragmentSeleccionado=true;
+        } else if (id == R.id.nav_formu_foto) {
+            miFragment=new Form3Fragment();
+            fragmentSeleccionado=true;
         } else if (id == R.id.nav_Acerca) {
             i1 = new Intent(this, Acerca.class);
-        } else if (id == R.id.nav_formu) {
-            i1 = new Intent(this, Formulario.class);
         }/*else if (id == R.id.nav_Login) {
            i1 = new Intent(this, Login.class);
         }*/
+
+        if (fragmentSeleccionado==true){
+            getSupportFragmentManager().beginTransaction().replace(R.id.,miFragment).commit();
+        }
 
         if (i1 != null) {
             startActivity(i1);
